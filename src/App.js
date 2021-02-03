@@ -1,17 +1,21 @@
-import logo from './logo.svg';
+import React from "react";
+
+import Footer from "./components/footer/footer";
+import Header from "./components/header/header";
+import MainContainer from "./components/mainContainer/mainContainer";
+
 import './App.css';
 
-function App() {
+const App = () => {
     return (
-        /*<div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Henka
-                </p>
-            </header>
-        </div>*/
-        <h1>Hello World Henka</h1>
+        <div className="container">
+            <main>
+                <Header />
+                <MainContainer />
+            </main>
+
+            <Footer />
+        </div>
     );
 }
 
