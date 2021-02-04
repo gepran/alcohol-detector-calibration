@@ -1,3 +1,4 @@
+/*
 
 formValidation();
 
@@ -42,13 +43,14 @@ function formValidation() {
             }, false)
         })
 
-   /* calculation_btn.addEventListener('click', function (event) {
+   /!* calculation_btn.addEventListener('click', function (event) {
         if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
         }
 
         form.classList.add('was-validated')
-    }, false)*/
+    }, false)*!/
 }
 
+*/

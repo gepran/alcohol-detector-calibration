@@ -6,7 +6,7 @@ const Footer = () => {
             <p className="mb-1">© 2020 Henka Kombucha</p>
 
 
-            <p>ADC built for <a href="https://rarecombinations.com/" target="_blank">Rare Combinations LLC</a></p>
+            <p>ADC built for <a href="https://rarecombinations.com/" rel="noreferrer" target="_blank">Rare Combinations LLC</a></p>
         </footer>
     )
 }

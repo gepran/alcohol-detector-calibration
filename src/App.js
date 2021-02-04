@@ -1,10 +1,9 @@
 import React from "react";
+import './App.css';
 
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
 import MainContainer from "./components/mainContainer/mainContainer";
-
-import './App.css';
 
 const App = () => {
     return (
