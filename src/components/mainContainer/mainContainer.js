@@ -1,7 +1,9 @@
 import React from "react";
 import regression from 'regression';
+import TableTr from "./TableTr";
 
-const MainContainer = () => {
+
+const MainContainer = (prop) => {
 
     function mapPowRegData() {
         let alcohol_percentages = document.getElementsByClassName('alcohol-percentage');
@@ -47,6 +49,23 @@ const MainContainer = () => {
 
     formValidation();
 
+    let tableCalculatorData = [
+        { alcoholPercent: '0.10', rawReading: 243, tabIndex: 1 },
+        { alcoholPercent: '0.10', rawReading: 251, tabIndex: 2 },
+        { alcoholPercent: '0.25', rawReading: 346, tabIndex: 3 },
+        { alcoholPercent: '0.25', rawReading: 356, tabIndex: 4 },
+        { alcoholPercent: '0.50', rawReading: 423, tabIndex: 5 },
+        { alcoholPercent: '0.50', rawReading: 423, tabIndex: 6 },
+        { alcoholPercent: '1.00', rawReading: 527, tabIndex: 7 },
+        { alcoholPercent: '1.00', rawReading: 536, tabIndex: 8 },
+        { alcoholPercent: '2.00', rawReading: 637, tabIndex: 9 },
+        { alcoholPercent: '2.00', rawReading: 641, tabIndex: 10 }
+        ]
+
+    let tableTrList = tableCalculatorData.map((number, index) =>
+        <TableTr key={index} data={number} />
+    );
+
     return (
         <div className="row g-3">
             <div className="col-md-12 col-lg-12 order-md-last">
@@ -60,76 +79,7 @@ const MainContainer = () => {
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control alcohol-percentage" placeholder="%" value="0.10"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       autoFocus value="243" tabIndex="1" required /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control  alcohol-percentage" placeholder="%" value="0.10"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       value="251" tabIndex="2" required /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control  alcohol-percentage" placeholder="%" value="0.25"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       value="346" tabIndex="3" required /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control  alcohol-percentage" placeholder="%" value="0.25"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       value="356" tabIndex="4" required /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control  alcohol-percentage" placeholder="%" value="0.50"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       value="423" tabIndex="5" required /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control  alcohol-percentage" placeholder="%" value="0.50"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       value="423" tabIndex="6" required /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control  alcohol-percentage" placeholder="%" value="1.00"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       value="527" tabIndex="7" required /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control  alcohol-percentage" placeholder="%" value="1.00"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       value="536" tabIndex="8" required /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control  alcohol-percentage" placeholder="%" value="2.00"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       value="637" tabIndex="9" required /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" min="0" step="0.01"
-                                       className="form-control  alcohol-percentage" placeholder="%" value="2.00"
-                                       required /></td>
-                            <td><input type="number" className="form-control raw-reading" placeholder="0.01"
-                                       value="641" tabIndex="10" required /></td>
-                        </tr>
+                            {tableTrList}
                         </tbody>
                     </table>
 
@@ -138,7 +88,7 @@ const MainContainer = () => {
                 <form className="card p-2 my-2 needs-validation">
                     <div className="input-group">
                         <input type="number" className="form-control" id="calculation-raw" placeholder="0.01"
-                               tabIndex="11" value="350" required />
+                               tabIndex="11" defaultValue="350" required />
                         <button type="button" className="btn btn-success" id="calculation-btn"
                                 onClick={calculateAlcoholPercentage}>CALCULATE
                         </button>
