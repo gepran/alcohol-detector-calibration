@@ -50,16 +50,16 @@ const MainContainer = (prop) => {
     formValidation();
 
     let tableCalculatorData = [
-        { alcoholPercent: '0.10', rawReading: 243, tabIndex: 1 },
-        { alcoholPercent: '0.10', rawReading: 251, tabIndex: 2 },
-        { alcoholPercent: '0.25', rawReading: 346, tabIndex: 3 },
-        { alcoholPercent: '0.25', rawReading: 356, tabIndex: 4 },
-        { alcoholPercent: '0.50', rawReading: 423, tabIndex: 5 },
-        { alcoholPercent: '0.50', rawReading: 423, tabIndex: 6 },
-        { alcoholPercent: '1.00', rawReading: 527, tabIndex: 7 },
-        { alcoholPercent: '1.00', rawReading: 536, tabIndex: 8 },
-        { alcoholPercent: '2.00', rawReading: 637, tabIndex: 9 },
-        { alcoholPercent: '2.00', rawReading: 641, tabIndex: 10 }
+        { alcoholPercent: '0.10', rawReading: 243, tabIndex: 1, autoFocus: true },
+        { alcoholPercent: '0.10', rawReading: 251, tabIndex: 2, autoFocus: false },
+        { alcoholPercent: '0.25', rawReading: 346, tabIndex: 3, autoFocus: false },
+        { alcoholPercent: '0.25', rawReading: 356, tabIndex: 4, autoFocus: false },
+        { alcoholPercent: '0.50', rawReading: 423, tabIndex: 5, autoFocus: false },
+        { alcoholPercent: '0.50', rawReading: 423, tabIndex: 6, autoFocus: false },
+        { alcoholPercent: '1.00', rawReading: 527, tabIndex: 7, autoFocus: false },
+        { alcoholPercent: '1.00', rawReading: 536, tabIndex: 8, autoFocus: false },
+        { alcoholPercent: '2.00', rawReading: 637, tabIndex: 9, autoFocus: false },
+        { alcoholPercent: '2.00', rawReading: 641, tabIndex: 10, autoFocus: false }
         ]
 
     let tableTrList = tableCalculatorData.map((number, index) =>

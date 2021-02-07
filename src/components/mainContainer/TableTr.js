@@ -8,7 +8,7 @@ const TableTr = (prop) => {
                        placeholder="%" defaultValue={prop.data.alcoholPercent} required /></td>
             <td>
                 <input type="number" className="form-control raw-reading" placeholder="0.01"
-                       autoFocus defaultValue={prop.data.rawReading} tabIndex={prop.data.tabIndex} required />
+                       autoFocus={prop.data.autoFocus} defaultValue={prop.data.rawReading} tabIndex={prop.data.tabIndex} required />
             </td>
         </tr>
     )
